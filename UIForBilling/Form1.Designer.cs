@@ -30,14 +30,14 @@ namespace UIForBilling
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.quantity = new System.Windows.Forms.TextBox();
+            this.enterItemCode = new System.Windows.Forms.TextBox();
+            this.address = new System.Windows.Forms.Label();
             this.customerMobile = new System.Windows.Forms.TextBox();
             this.customerName = new System.Windows.Forms.Label();
-            this.address = new System.Windows.Forms.Label();
             this.newInvoice = new System.Windows.Forms.Button();
             this.salesReturn = new System.Windows.Forms.Button();
             this.saveToDraft = new System.Windows.Forms.Button();
-            this.enterItemCode = new System.Windows.Forms.TextBox();
-            this.quantity = new System.Windows.Forms.TextBox();
             this.itemName = new System.Windows.Forms.Label();
             this.unitPrice = new System.Windows.Forms.Label();
             this.itemCategory = new System.Windows.Forms.Label();
@@ -54,10 +54,12 @@ namespace UIForBilling
             this.Sub_Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.printSave = new System.Windows.Forms.Button();
             this.print = new System.Windows.Forms.Button();
-            this.clear = new System.Windows.Forms.Button();
             this.save = new System.Windows.Forms.Button();
+            this.clear = new System.Windows.Forms.Button();
             this.totalDiscount = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -91,6 +93,8 @@ namespace UIForBilling
             this.tableLayoutPanel1.Controls.Add(this.save, 4, 8);
             this.tableLayoutPanel1.Controls.Add(this.clear, 4, 9);
             this.tableLayoutPanel1.Controls.Add(this.totalDiscount, 3, 12);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 4, 12);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 4, 14);
             this.tableLayoutPanel1.Controls.Add(this.label4, 3, 14);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -112,6 +116,49 @@ namespace UIForBilling
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.666667F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(800, 450);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // quantity
+            // 
+            this.quantity.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quantity.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.quantity.Location = new System.Drawing.Point(164, 34);
+            this.quantity.Margin = new System.Windows.Forms.Padding(4);
+            this.quantity.Name = "quantity";
+            this.quantity.Size = new System.Drawing.Size(152, 20);
+            this.quantity.TabIndex = 7;
+            this.quantity.Text = "Quantity";
+            this.quantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.quantity.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // enterItemCode
+            // 
+            this.enterItemCode.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.enterItemCode.ForeColor = System.Drawing.SystemColors.ScrollBar;
+            this.enterItemCode.Location = new System.Drawing.Point(4, 34);
+            this.enterItemCode.Margin = new System.Windows.Forms.Padding(4);
+            this.enterItemCode.Name = "enterItemCode";
+            this.enterItemCode.Size = new System.Drawing.Size(152, 20);
+            this.enterItemCode.TabIndex = 6;
+            this.enterItemCode.Text = "Enter Item Code";
+            this.enterItemCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // address
+            // 
+            this.address.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.address.AutoSize = true;
+            this.address.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.tableLayoutPanel1.SetColumnSpan(this.address, 2);
+            this.address.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.address.Location = new System.Drawing.Point(326, 6);
+            this.address.Margin = new System.Windows.Forms.Padding(6);
+            this.address.Name = "address";
+            this.address.Size = new System.Drawing.Size(308, 18);
+            this.address.TabIndex = 2;
+            this.address.Text = "Address";
+            this.address.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.address.Click += new System.EventHandler(this.label1_Click);
             // 
             // customerMobile
             // 
@@ -140,24 +187,6 @@ namespace UIForBilling
             this.customerName.TabIndex = 1;
             this.customerName.Text = "Customer name";
             this.customerName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // address
-            // 
-            this.address.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.address.AutoSize = true;
-            this.address.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.tableLayoutPanel1.SetColumnSpan(this.address, 2);
-            this.address.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.address.Location = new System.Drawing.Point(326, 6);
-            this.address.Margin = new System.Windows.Forms.Padding(6);
-            this.address.Name = "address";
-            this.address.Size = new System.Drawing.Size(308, 18);
-            this.address.TabIndex = 2;
-            this.address.Text = "Address";
-            this.address.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.address.Click += new System.EventHandler(this.label1_Click);
             // 
             // newInvoice
             // 
@@ -202,31 +231,6 @@ namespace UIForBilling
             this.saveToDraft.Text = "Save to Draft";
             this.saveToDraft.UseVisualStyleBackColor = false;
             this.saveToDraft.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // enterItemCode
-            // 
-            this.enterItemCode.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.enterItemCode.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.enterItemCode.Location = new System.Drawing.Point(4, 34);
-            this.enterItemCode.Margin = new System.Windows.Forms.Padding(4);
-            this.enterItemCode.Name = "enterItemCode";
-            this.enterItemCode.Size = new System.Drawing.Size(152, 20);
-            this.enterItemCode.TabIndex = 6;
-            this.enterItemCode.Text = "Enter Item Code";
-            this.enterItemCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // quantity
-            // 
-            this.quantity.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quantity.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.quantity.Location = new System.Drawing.Point(164, 34);
-            this.quantity.Margin = new System.Windows.Forms.Padding(4);
-            this.quantity.Name = "quantity";
-            this.quantity.Size = new System.Drawing.Size(152, 20);
-            this.quantity.TabIndex = 7;
-            this.quantity.Text = "Quantity";
-            this.quantity.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.quantity.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // itemName
             // 
@@ -402,20 +406,6 @@ namespace UIForBilling
             this.print.Text = "Print Only";
             this.print.UseVisualStyleBackColor = false;
             // 
-            // clear
-            // 
-            this.clear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.clear.BackColor = System.Drawing.Color.DodgerBlue;
-            this.clear.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clear.ForeColor = System.Drawing.Color.White;
-            this.clear.Location = new System.Drawing.Point(680, 273);
-            this.clear.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
-            this.clear.Name = "clear";
-            this.clear.Size = new System.Drawing.Size(100, 24);
-            this.clear.TabIndex = 17;
-            this.clear.Text = "Clear";
-            this.clear.UseVisualStyleBackColor = false;
-            // 
             // save
             // 
             this.save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -430,14 +420,29 @@ namespace UIForBilling
             this.save.Text = "Save";
             this.save.UseVisualStyleBackColor = false;
             // 
+            // clear
+            // 
+            this.clear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.clear.BackColor = System.Drawing.Color.DodgerBlue;
+            this.clear.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clear.ForeColor = System.Drawing.Color.White;
+            this.clear.Location = new System.Drawing.Point(680, 273);
+            this.clear.Margin = new System.Windows.Forms.Padding(20, 3, 20, 3);
+            this.clear.Name = "clear";
+            this.clear.Size = new System.Drawing.Size(100, 24);
+            this.clear.TabIndex = 17;
+            this.clear.Text = "Clear";
+            this.clear.UseVisualStyleBackColor = false;
+            // 
             // totalDiscount
             // 
             this.totalDiscount.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.totalDiscount.AutoSize = true;
-            this.totalDiscount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.totalDiscount.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalDiscount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.totalDiscount.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.totalDiscount.ForeColor = System.Drawing.Color.White;
             this.totalDiscount.Location = new System.Drawing.Point(486, 366);
             this.totalDiscount.Margin = new System.Windows.Forms.Padding(6);
             this.totalDiscount.Name = "totalDiscount";
@@ -452,8 +457,9 @@ namespace UIForBilling
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.label4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.label4.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(486, 426);
             this.label4.Margin = new System.Windows.Forms.Padding(6);
             this.label4.Name = "label4";
@@ -461,6 +467,39 @@ namespace UIForBilling
             this.label4.TabIndex = 20;
             this.label4.Text = "Total";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(646, 366);
+            this.label1.Margin = new System.Windows.Forms.Padding(6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(148, 18);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "800.00";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(646, 426);
+            this.label2.Margin = new System.Windows.Forms.Padding(6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(148, 18);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "3000.00";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // total
             // 
@@ -508,6 +547,8 @@ namespace UIForBilling
         private System.Windows.Forms.Button clear;
         private System.Windows.Forms.Label totalDiscount;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
